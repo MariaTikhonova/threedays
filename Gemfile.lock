@@ -40,7 +40,13 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (8.0.0)
+    autoprefixer-rails (7.1.6)
+      execjs
     bindex (0.5.0)
+    bootstrap (4.0.0.beta2.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.2)
@@ -134,6 +140,7 @@ GEM
     pg (0.18.4)
     pg (0.18.4-x64-mingw32)
     pg (0.18.4-x86-mingw32)
+    popper_js (1.12.5)
     pry (0.11.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -240,13 +247,14 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  bootstrap (~> 4.0.0.beta2.1)
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
   guard (= 2.13.0)
   guard-livereload
   guard-minitest (= 2.4.4)
   jbuilder (= 2.7.0)
-  jquery-rails (= 4.3.1)
+  jquery-rails
   listen (= 3.0.8)
   minitest-reporters (= 1.1.14)
   pg (= 0.18.4)
