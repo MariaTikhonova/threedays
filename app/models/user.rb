@@ -8,7 +8,4 @@ class User < ApplicationRecord
   			 :trackable, 
   			 :validatable, 
   			 :authentication_keys => [:username]
-
-	validates :email, presence: true, length: {maximum: 255},
-									  uniqueness: {case_sensitive: false}
 end
