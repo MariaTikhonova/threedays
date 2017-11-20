@@ -14,15 +14,15 @@
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item"%>
           </div>
         <% else %>
-              <%= link_to "Sign in", new_user_session_path, class:"nav-link" %>
-            <li class="nav-item navbar-text"> or</li>
-              <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %>
-            <li class="nav-item navbar-text"> or</li>
-              <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class:"nav-link"  %>
-          <% end %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connect</strong></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
+            <%= link_to "Log in with facebook", user_facebook_omniauth_authorize_path, class:"dropdown-item"%>        
+            <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %>
+          </div>
+        <% end %>
         </li>  
   		</ul>
   	</nav>
 	</div>
 </header>
-
