@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @user = User.all
   end
 
   def show

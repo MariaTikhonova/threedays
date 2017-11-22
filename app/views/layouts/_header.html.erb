@@ -5,7 +5,7 @@
   		<ul class="navbar-nav mr-auto navbar-right">
   			<li class="nav-item"><%= link_to "Home", root_path, class:"nav-link" %></li>
   			<li class="nav-item"><%= link_to "Help", help_path , class:"nav-link"%></li>
-  		  
+        <li class="nav-item"><%= link_to "Users", users_path , class:"nav-link"%></li>
         <li class="nav-item dropdown">
         <% if user_signed_in? %>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome 
