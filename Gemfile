@@ -12,6 +12,9 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'figaro'
 gem 'omniauth-facebook'
+gem 'will_paginate',           '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
