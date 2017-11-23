@@ -10,11 +10,10 @@
 	<ul class="users">
 		<% @users.each do |user| %>
 			<li>
-				<h2>
 				  <%= gravatar_for user, size: 40 %>
-				  <%= user.username %> - 
+				  <%= link_to user.username, user %> - 
 				  <%= user.email %>
-				</h2>
+
 			</li>
 		<% end %>
 	</ul>
