@@ -107,7 +107,7 @@ User ✔
 
 Place
 	create:  Create a new place
-	delete:  Delete an existing place
+	destroy: Delete an existing place
 	update:  Update an existing place
 
 Comment
