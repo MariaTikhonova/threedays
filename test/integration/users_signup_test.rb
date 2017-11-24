@@ -24,5 +24,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         password_confirmation: 'ciaone87'
       } }
 		end
+    assert_response :redirect
+    follow_redirect!
+		assert_template 'static_pages/home'
+    assert_select 'a[href=?]', new_user_session_path, count: 0
+		assert_select 'a[href=?]', destroy_user_session_path
 	end
 end
