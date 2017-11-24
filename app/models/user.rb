@@ -11,11 +11,13 @@ class User < ApplicationRecord
   			 :omniauth_providers => [:facebook],
   			 :authentication_keys => [:username]
 
+  before_save {self.username = self.username.downcase}
 	validates :username, presence: true, 
 											 length: {minimum: 5, maximum: 50}, 
 											 uniqueness: {case_sensitive: false}
 
 
+  before_save {self.email = self.email.downcase}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: true, 
 									  length: {minimum: 12, maximum: 255},

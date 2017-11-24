@@ -6,10 +6,14 @@ class UserTest < ActiveSupport::TestCase
 		@user = User.new(username: "Example", email: "user@example.com", password: "letmein00")
 	end
 
+
+#USER CHECK
 	test "should be valid" do
 		assert @user.valid?
 	end
 
+
+#USERNAME CHECK
 	test "username should be present" do
 		@user.username = "   "
 		assert_not @user.valid?
@@ -25,6 +29,14 @@ class UserTest < ActiveSupport::TestCase
 		assert_not @user.valid?
 	end
 
+	test "username should be saved as lower-case" do
+		mixed_case_username = "CiaONe"
+		@user.username = mixed_case_username
+		@user.save
+		assert_equal mixed_case_username.downcase, @user.reload.username
+	end
+
+#EMAIL CHECK
 	test "email should be present" do
 		@user.email = "   "
 		assert_not @user.valid?
@@ -36,6 +48,14 @@ class UserTest < ActiveSupport::TestCase
 			@user.email = email
 			assert @user.valid?
 		end
+	end
+
+	test "email address should be unique" do
+		duplicate_user = @user.dup
+		duplicate_user.email = @user.email.upcase
+		duplicate_user.username = @user.username.upcase
+		@user.save
+		assert_not duplicate_user.valid?
 	end
 
 	test "email should be not valid" do
@@ -56,6 +76,14 @@ class UserTest < ActiveSupport::TestCase
 		assert_not @user.valid?
 	end
 
+	test "email should be saved as lower-case" do
+		mixed_case_email = "CiAO@gMaIl.COM"
+		@user.email = mixed_case_email
+		@user.save
+		assert_equal mixed_case_email.downcase, @user.reload.email
+	end
+
+#PASSWORD CHECK
 	test "password should be present" do
 		@user.password = nil
 		assert_not @user.valid?
