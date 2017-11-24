@@ -38,33 +38,33 @@ This is the 3days application by [Isashi Mitsui](https://github.com/Isashi/).
 ### Models ✔
 ```ruby
 All ✔
-    *_id ✔
-    created_at ✔
-    updated_at ✔
+	*_id ✔
+	created_at ✔
+	updated_at ✔
 
 User: ✔
-    username: string ✔
-    password: string ✔
-    email:    string ✔
+	username: string ✔
+	password: string ✔
+	email:    string ✔
       
 Place: 
-    user_id:     references
- 		city_id:     references 
-    title:       string
-    description: text
- 		lat: 
- 		long: 
-    image_data:  text
+	user_id:     references
+	city_id:     references 
+	title:       string
+	description: text
+	lat: 
+	long: 
+	image_data:  text
 
 City: 
-		user_id:     references
-		name:        string
-		description: text
+	user_id:     references
+	name:        string
+	description: text
 
 Comment:
-    user_id: references
-    place_id: references
-    content: text
+	user_id:  references
+	place_id: references
+	content:  text
 
 ```
 
@@ -73,46 +73,46 @@ Comment:
 
 ```ruby
 User 
-    has_many :places
-    has_many :comments, dependent: :destroy
-    has_many :cities
+	has_many :places
+	has_many :comments, dependent: :destroy
+	has_many :cities
     
 Place 
-    belongs_to :user
-    has_many   :comments
+	belongs_to :user
+	has_many   :comments
 
 City
-		belongs_to :user
-		has_many   :places
+	belongs_to :user
+	has_many   :places
     
 Comment
-    belongs_to :place
-    belongs_to :user
+	belongs_to :place
+	belongs_to :user
 
 ```
     
 ### Controllers
 ```ruby
 StaticPages
-	  about:
-	  contact:
-	  help: 
-	  home: 
+	about:
+	contact:
+	help: 
+	home: 
 
 User ✔
-    index: Show the list of all users ✔
-    show: Show the user's profile page ✔
-    update: Update user's details ✔
-    destroy: Delete a user ✔
+	index:   Show the list of all users ✔
+	show:    Show the user's profile page ✔
+	update:  Update user's details ✔
+	destroy: Delete a user ✔
 
 Place
-	  create: creates a new place
- 	  delete: deletes an existing place
- 	  update: Update an existing place
+	create:  Create a new place
+	delete:  Delete an existing place
+	update:  Update an existing place
 
 Comment
-  	create: creates a new comment
-   	delete: deletes an existing comment
+	create:  Create a new comment
+	destroy: Delete an existing comment
 
 ```
 
