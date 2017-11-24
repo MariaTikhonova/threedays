@@ -94,10 +94,10 @@ Comment
 ### Controllers
 ```ruby
 StaticPages
-	    about:
-	    contact:
-	    help: 
-	    home: 
+	  about:
+	  contact:
+	  help: 
+	  home: 
 
 User ✔
     index: Show the list of all users ✔
@@ -106,13 +106,13 @@ User ✔
     destroy: Delete a user ✔
 
 Place
-    create: creates a new place
-    delete: deletes an existing place
-    update: Update an existing place
+	  create: creates a new place
+ 	  delete: deletes an existing place
+ 	  update: Update an existing place
 
 Comment
-    create: creates a new comment
-    delete: deletes an existing comment
+  	create: creates a new comment
+   	delete: deletes an existing comment
 
 ```
 
