@@ -102,7 +102,7 @@ StaticPages
 User ✔
 	index:   Show the list of all users ✔
 	show:    Show the user's profile page ✔
-	update:  Update user's details ✔
+	update:  Update an existing user ✔
 	destroy: Delete a user ✔
 
 Place
