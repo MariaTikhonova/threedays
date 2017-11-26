@@ -1,0 +1,11 @@
+<h1>Cities To Choose</h1>
+
+<ul id="cities">
+ <% @cities.each do |city| %>
+   <li>
+    <%= city.name %>
+   </li>
+  <% end %>
+ </ul>
+
+ <%= link_to "City Choice", new_city_path, class: "new_city" %> 
