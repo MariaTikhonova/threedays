@@ -3,9 +3,9 @@
 <ul id="cities">
  <% @cities.each do |city| %>
    <li>
-    <%= city.name %>
+    <%= link_to city.name, city_path(city) %>
    </li>
   <% end %>
  </ul>
 
- <%= link_to "City Choice", new_city_path, class: "new_city" %> 
+ <%= link_to "Add a city", new_city_path, class: "new_city" %> 
