@@ -12,4 +12,8 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
   end
 
+  def city_params
+  	params.require(:city).permit(:image)
+  end
+
 end
