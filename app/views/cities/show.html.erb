@@ -1,3 +1,9 @@
 <h1><%= @city.name %></h1>
 <p><%= @city.description %></p>
+<p>
+<% if @city.image.exists? %>
+<%= image_tag @city.image.url %>
+<% end %> 
+</p>
 <%= link_to "<<Back to Cities List", cities_path %>
+

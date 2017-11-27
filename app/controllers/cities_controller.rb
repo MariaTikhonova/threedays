@@ -1,4 +1,5 @@
 class CitiesController < ApplicationController
+	include CitiesHelper
   def new
   	@city = City.new
   end
